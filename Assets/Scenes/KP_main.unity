@@ -301,59 +301,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1181153270
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1181153272}
-  - component: {fileID: 1181153271}
-  m_Layer: 0
-  m_Name: Spawner2
-  m_TagString: Spawner
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1181153271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1181153270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a08daf64c6f1ba246874f8562e3f8142, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawn_freq: 1
-  foods:
-  - {fileID: 2510164935946453179, guid: ba8f6ab65da2b32469258ea156959e0a, type: 3}
-  - {fileID: 8867021362952176274, guid: 9b59abb99958d3344981fc8838c39dc7, type: 3}
-  - {fileID: 2794879269265525569, guid: 069c6f5e11f22e6499ae14f2cddf995a, type: 3}
-  - {fileID: 1578710212339046889, guid: aed00ae181b069d46ac447c72a8d64b9, type: 3}
-  - {fileID: 5152010972289562607, guid: f5218c9534ee03e48a63b393810595f8, type: 3}
-  - {fileID: 1515201514422737590, guid: 8a375e504e8650148ba94e646f6fc7b7, type: 3}
-  spawner: {fileID: 1181153270}
-  spawn_range: 12
---- !u!4 &1181153272
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1181153270}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.3, y: 34.81, z: 32.05}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1251345631
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08daf64c6f1ba246874f8562e3f8142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawn_freq: 1
+  spawn_freq: 0.25
   foods:
   - {fileID: 2510164935946453179, guid: ba8f6ab65da2b32469258ea156959e0a, type: 3}
   - {fileID: 8867021362952176274, guid: 9b59abb99958d3344981fc8838c39dc7, type: 3}
@@ -393,6 +340,7 @@ MonoBehaviour:
   - {fileID: 1515201514422737590, guid: 8a375e504e8650148ba94e646f6fc7b7, type: 3}
   spawner: {fileID: 1251345631}
   spawn_range: 12
+  numFoods: 6
 --- !u!4 &1251345633
 Transform:
   m_ObjectHideFlags: 0
