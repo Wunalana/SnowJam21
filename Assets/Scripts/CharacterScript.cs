@@ -5,6 +5,8 @@ using UnityEngine;
 public class CharacterScript : MonoBehaviour
 {
     public int score;
+    public Animator animator;
+    SpriteRenderer m_SpriteRenderer;
     public float speed = 3f;
     public bool isFrozen;
     private int freezeTime = 3;
@@ -14,13 +16,20 @@ public class CharacterScript : MonoBehaviour
     {
         score = 0;
         isFrozen = false;
+        m_SpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
         if (isFrozen != true)
         {
-            this.transform.Translate(Input.GetAxis("Horizontal") * Time.deltaTime * speed, 0, 0);
+            //amy
+            float horizontalMove = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
+            this.transform.Translate(horizontalMove, 0, 0);
+
+            // animator
+            m_SpriteRenderer.flipX = (horizontalMove < 0);
+            animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
         }
         else
         {
