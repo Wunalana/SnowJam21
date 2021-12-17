@@ -41,7 +41,17 @@ public class CharacterScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Cake")
+        if (collision.gameObject.tag == "IceCookie")
+        {
+            score += 0;
+            isFrozen = true;
+        }
+        else if (collision.gameObject.tag == "PoisonDonut")
+        {
+            animator.SetTrigger("Puke");
+            score += -5;
+        }
+        else if (collision.gameObject.tag == "Cake")
         {
             animator.SetTrigger("Eat");
             score += 1;
@@ -61,16 +71,7 @@ public class CharacterScript : MonoBehaviour
             animator.SetTrigger("Eat");
             score += 10;
         }
-        else if (collision.gameObject.tag == "IceCookie")
-        {
-            score += 0;
-            isFrozen = true;
-        }
-        else if (collision.gameObject.tag == "PoisonDonut")
-        {
-            animator.SetTrigger("Puke");
-            score += -5;
-        }
+
 
     }
 

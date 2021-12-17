@@ -9,12 +9,13 @@ public class Spawner : MonoBehaviour
     public GameObject spawner; //this
     public float spawn_range = 3f; //how far from spawner can food spawn
     public int numFoods; //number of foods to throw
+    private int randomTimeFactor; //time after each food drop
 
     void Start()
     {
-        StartCoroutine("SpeedScaler");
+        //
         numFoods = 6;
-        //spawner = GameObject.FindGameObjectWithTag("Spawner");
+        StartCoroutine("SpeedScaler");
     }
 
     void Update()
@@ -24,13 +25,13 @@ public class Spawner : MonoBehaviour
 
     IEnumerator SpeedScaler()
     {
-        int randomTimeFactor = Random.Range(0,5);
         for (; ; )
         {
-            // execute block of code here
+            randomTimeFactor = Random.Range(0, 5);
             spawnBlock();
             yield return new WaitForSeconds(randomTimeFactor * spawn_freq);
         }
+
     }
 
     void spawnBlock()
