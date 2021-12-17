@@ -44,6 +44,7 @@ public class CharacterScript : MonoBehaviour
         {
             score += 0;
             isFrozen = true;
+            animator.SetBool("isFrozen", isFrozen);
         }
         else if (collision.gameObject.tag == "PoisonDonut")
         {
