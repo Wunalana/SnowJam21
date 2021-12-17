@@ -35,6 +35,7 @@ public class CharacterScript : MonoBehaviour
         {
             StartCoroutine("frozen");
         }
+        animator.SetBool("isFrozen", isFrozen);
 
     }
 
@@ -42,19 +43,22 @@ public class CharacterScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Cake")
         {
-            //Debug.Log("hit the cake");
+            animator.SetTrigger("Eat");
             score += 1;
         }
         else if (collision.gameObject.tag == "Cookie")
         {
+            animator.SetTrigger("Eat");
             score += 2;
         }
         else if (collision.gameObject.tag == "Croissant")
         {
+            animator.SetTrigger("Eat");
             score += 3;
         }
         else if (collision.gameObject.tag == "Toast")
         {
+            animator.SetTrigger("Eat");
             score += 10;
         }
         else if (collision.gameObject.tag == "IceCookie")
@@ -64,6 +68,7 @@ public class CharacterScript : MonoBehaviour
         }
         else if (collision.gameObject.tag == "PoisonDonut")
         {
+            animator.SetTrigger("Puke");
             score += -5;
         }
 
