@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterScript : MonoBehaviour
 {
-    public int score;
+    public static int score;
     public Animator animator;
     SpriteRenderer m_SpriteRenderer;
     public float speed = 3f;
