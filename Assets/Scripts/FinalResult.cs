@@ -22,7 +22,7 @@ public class FinalResult : MonoBehaviour
 
     const int maxPlayer = 5;
     string[] playerNames = new string[] { "Gracie", "Amy", "Victor", "Mike", "Emily" };
-    float[] playerScores = new float[] { 0, 0, 0, 0, 0 };
+    float[] playerScores = new float[] { 60, 60, 60, 60, 60 };
     float currentLowScoreOnB = 100;
     float Pscore1 = 100;
 
@@ -84,7 +84,7 @@ public class FinalResult : MonoBehaviour
         }
         else
         {
-            displayScore.text = "Congratulations!! \nYou managed to feed Blob in\n" + timeScore + "s"; 
+            displayScore.text = "Congratulations!! \nYou managed to feed Blob in\n" + timeScore + " seconds"; 
             //if (timeScore < currentLowScoreOnB)
             //{
             //    int i = 0;

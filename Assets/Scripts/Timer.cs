@@ -29,7 +29,9 @@ public class Timer : MonoBehaviour
         {
             countdownText.color = Color.red;
             currentTime = 0;
+            Application.LoadLevel("Simon_EndScreen");
         }
+
     }
 
     private string secondsToClockDisplay(float time) {
