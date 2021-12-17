@@ -25,6 +25,10 @@ public class ScoreBoard : MonoBehaviour
             _score = CharacterScript.score;
         }
         scoreboardText.text = "Score: " + _score.ToString() ;
+        if (_score >= 100)
+        {
+            Application.LoadLevel("Simon_EndScreen");
+        }
 
     }
 }
