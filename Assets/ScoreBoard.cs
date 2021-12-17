@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ScoreBoard : MonoBehaviour
 {
     //public GameObject player;
     public int _score;
 
-    [SerializeField] Text scoreboardText;
+    [SerializeField] TMP_Text scoreboardText;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,7 @@ public class ScoreBoard : MonoBehaviour
             //do nothing
             _score = CharacterScript.score;
         }
-        scoreboardText.text = _score.ToString() ;
+        scoreboardText.text = "Score: " + _score.ToString() ;
 
     }
 }
