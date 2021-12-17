@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Timer : MonoBehaviour
 {
+    private string timerPrefix = "Timer: ";
     public static float currentTime = 0f;
     public static float startingTime = 60f;
 
-    [SerializeField] Text countdownText;
+    [SerializeField] TMP_Text countdownText;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +22,7 @@ public class Timer : MonoBehaviour
     void Update()
     {
         currentTime -= 1 * Time.deltaTime;
-        countdownText.text = currentTime.ToString("0");
+        countdownText.text = secondsToClockDisplay(currentTime);
         //print(currentTime); // Testing
 
         if (currentTime <= 0)
@@ -28,5 +30,11 @@ public class Timer : MonoBehaviour
             countdownText.color = Color.red;
             currentTime = 0;
         }
+    }
+
+    private string secondsToClockDisplay(float time) {
+        float minutes = Mathf.Floor(time / 60);
+        float seconds = Mathf.RoundToInt(time % 60);
+        return timerPrefix + minutes + ":" + seconds;
     }
 }
