@@ -7,6 +7,9 @@ public class ProjectileInteractions : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("COLLISION DETECTED");
-        Destroy(gameObject);
+        if (collision.gameObject.tag == "Player" ||
+            collision.gameObject.tag == "Floor")
+            Destroy(gameObject);
+
     }
 }

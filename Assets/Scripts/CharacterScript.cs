@@ -12,7 +12,7 @@ public class CharacterScript : MonoBehaviour
     private int freezeTime = 3;
 
 
-    void start()
+    void Start()
     {
         score = 0;
         isFrozen = false;

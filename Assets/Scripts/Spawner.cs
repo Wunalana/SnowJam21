@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public float spawn_freq = 0.25f; 
+    public float spawn_freq = 0.5f; 
     public GameObject[] foods; //array of food sprites
     public GameObject spawner; //this
     public float spawn_range = 3f; //how far from spawner can food spawn
@@ -24,12 +24,12 @@ public class Spawner : MonoBehaviour
 
     IEnumerator SpeedScaler()
     {
-        float randomTimeFactor = Random.Range(1, 4);
+        int randomTimeFactor = Random.Range(0,5);
         for (; ; )
         {
             // execute block of code here
             spawnBlock();
-            yield return new WaitForSeconds(spawn_freq * randomTimeFactor);
+            yield return new WaitForSeconds(randomTimeFactor * spawn_freq);
         }
     }
 
