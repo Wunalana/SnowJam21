@@ -1024,6 +1024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayScore: {fileID: 2120560850}
+  Canvas: {fileID: 1059186478}
 --- !u!1 &1084098018
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,7 +1101,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -273, y: 120}
+  m_AnchoredPosition: {x: -273, y: 110}
   m_SizeDelta: {x: -576, y: -352}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1156786379
@@ -1277,6 +1278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52913e7086a6da49938bfab9ae84b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameOfPlayer: 
   saveName: 
   inputText: {fileID: 1254786940}
   loadedName: {fileID: 1084098019}
@@ -1648,8 +1650,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 70, y: 45}
-  m_SizeDelta: {x: -160, y: -110}
+  m_AnchoredPosition: {x: 2, y: 45}
+  m_SizeDelta: {x: -210, y: -110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2120560850
 MonoBehaviour:
@@ -1678,7 +1680,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

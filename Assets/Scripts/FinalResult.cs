@@ -7,11 +7,12 @@ public class FinalResult : MonoBehaviour
 {
     //Text userNameInputText;
     //public GameObject canvas;
-    string playerName = PlayerName.nameOfPlayer;
+    string playerName; //= PlayerName.nameOfPlayer;
 
     public Text displayScore;
     int Pscore = CharacterScript.score;
     float timeScore = Timer.startingTime - Timer.currentTime;
+    public GameObject Canvas;
     //public Text displayBoard;
 
     //public InputField Username;
@@ -60,7 +61,10 @@ public class FinalResult : MonoBehaviour
                 playerNames[k] = playerNames[k-1];
                 playerScores[k] = playerScores[k-1];
             }
-            playerNames[k] = playerName;
+            //kp
+            //playerName = Canvas.GetComponent<PlayerName>().nameOfPlayer;
+            playerNames[k] = "You";
+            //'kp
             playerScores[k] = timeScore;
             currentLowScoreOnB = playerScores[4];
             displayScore.text = "\nis no." + (k+1) + " on the scoreboard!!";
@@ -75,11 +79,11 @@ public class FinalResult : MonoBehaviour
     {
         if (Pscore<100)
         {
-            displayScore.text = "\n\nOops you failed to feed Blob!\nHe is still hungry:/";
+            displayScore.text = "\n\nOops you failed to feed Blob!\nHe is still hungry :/";
         }
         else
         {
-            displayScore.text = "\n\nCongratulations!! \nYou feed Blob in\n" + timeScore + "s"; 
+            displayScore.text = "\n\nCongratulations!! \nYou managed to feed Blob in\n" + timeScore + "s"; 
             //if (timeScore < currentLowScoreOnB)
             //{
             //    int i = 0;

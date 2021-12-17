@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerName : MonoBehaviour
 {
-    public static string nameOfPlayer;
+    public string nameOfPlayer;
     public string saveName;
     public Text inputText;
     public Text loadedName;
@@ -26,6 +26,7 @@ public class PlayerName : MonoBehaviour
     public void SetName()
     {
         saveName = inputText.text;
+        nameOfPlayer = saveName;
         PlayerPrefs.SetString("name", saveName);
     }
 }
