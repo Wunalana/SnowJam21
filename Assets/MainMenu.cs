@@ -6,7 +6,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        Application.LoadLevel("Game");
+        Application.LoadLevel("KP_main");
         Debug.Log("Running");
     }
     
