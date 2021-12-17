@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class FinalResult : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class FinalResult : MonoBehaviour
     //public GameObject canvas;
     string playerName; //= PlayerName.nameOfPlayer;
 
-    public Text displayScore;
+    public TMP_Text displayScore;
     int Pscore = CharacterScript.score;
     float timeScore = Timer.startingTime - Timer.currentTime;
     public GameObject Canvas;
@@ -67,7 +68,7 @@ public class FinalResult : MonoBehaviour
             //'kp
             playerScores[k] = timeScore;
             currentLowScoreOnB = playerScores[4];
-            displayScore.text = "\nis no." + (k+1) + " on the scoreboard!!";
+            displayScore.text = "is no." + (k+1) + " on the scoreboard!!";
             for (int j = 0; j<maxPlayer; j++)
             {
                     displayScore.text += "\n No." + (j + 1) + "   " + playerNames[j] + "   " + playerScores[j];
@@ -79,11 +80,11 @@ public class FinalResult : MonoBehaviour
     {
         if (Pscore<100)
         {
-            displayScore.text = "\n\nOops you failed to feed Blob!\nHe is still hungry :/";
+            displayScore.text = "Oops you failed to feed Blob!\nHe is still hungry :/";
         }
         else
         {
-            displayScore.text = "\n\nCongratulations!! \nYou managed to feed Blob in\n" + timeScore + "s"; 
+            displayScore.text = "Congratulations!! \nYou managed to feed Blob in\n" + timeScore + "s"; 
             //if (timeScore < currentLowScoreOnB)
             //{
             //    int i = 0;
