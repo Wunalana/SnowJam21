@@ -20,8 +20,8 @@ public class FinalResult : MonoBehaviour
 
 
     const int maxPlayer = 5;
-    string[] playerNames = new string[] { "Matt", "Joanne", "Robert", "Sean", "Cassie" };
-    float[] playerScores = new float[] { 20, 30, 70, 80, 100 };
+    string[] playerNames = new string[] { "Gracie", "Amy", "Victor", "Mike", "Emily" };
+    float[] playerScores = new float[] { 0, 0, 0, 0, 0 };
     float currentLowScoreOnB = 100;
     float Pscore1 = 100;
 

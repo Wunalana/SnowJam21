@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerName : MonoBehaviour
 {
-    public string nameOfPlayer;
+    public static string nameOfPlayer;
     public string saveName;
     public Text inputText;
     public Text loadedName;
