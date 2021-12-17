@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class CharacterScript : MonoBehaviour
 {
-    public int score;
+    public static int score;
     public Animator animator;
     SpriteRenderer m_SpriteRenderer;
     public float speed = 3f;
     public bool isFrozen;
     private int freezeTime = 3;
+    //float currentTime = 0f; //VF
+    //[SerializeField] Text scoreText; //VF
 
+    void Awake()
+    {
+        score = 0;
+    }
 
     void Start()
     {
-        score = 0;
+        //score = 0;
         isFrozen = false;
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -23,11 +29,9 @@ public class CharacterScript : MonoBehaviour
     {
         if (isFrozen != true)
         {
-            //amy
             float horizontalMove = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
             this.transform.Translate(horizontalMove, 0, 0);
 
-            // animator
             m_SpriteRenderer.flipX = (horizontalMove < 0);
             animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
         }
@@ -35,6 +39,9 @@ public class CharacterScript : MonoBehaviour
         {
             StartCoroutine("frozen");
         }
+        Debug.Log(score);
+        //scoreText.text = score.ToString("0"); // VicF
+        //print(score); // VF
 
     }
 

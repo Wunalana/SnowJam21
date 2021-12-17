@@ -6,9 +6,9 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    float currentTime = 0f;
-    float startingTime = 60f;
     private string timerPrefix = "Timer: ";
+    public static float currentTime = 0f;
+    public static float startingTime = 60f;
 
     [SerializeField] TMP_Text countdownText;
 
