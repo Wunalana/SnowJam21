@@ -35,7 +35,6 @@ public class CharacterScript : MonoBehaviour
         {
             StartCoroutine("frozen");
         }
-        animator.SetBool("isFrozen", isFrozen);
 
     }
 
@@ -43,32 +42,38 @@ public class CharacterScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Cake")
         {
-            animator.SetTrigger("Eat");
+            if (!isFrozen)
+                animator.SetTrigger("Eat");
             score += 1;
         }
         else if (collision.gameObject.tag == "Cookie")
         {
-            animator.SetTrigger("Eat");
+            if (!isFrozen)
+                animator.SetTrigger("Eat");
             score += 2;
         }
         else if (collision.gameObject.tag == "Croissant")
         {
-            animator.SetTrigger("Eat");
+            if (!isFrozen)
+                animator.SetTrigger("Eat");
             score += 3;
         }
         else if (collision.gameObject.tag == "Toast")
         {
-            animator.SetTrigger("Eat");
+            if (!isFrozen)
+                animator.SetTrigger("Eat");
             score += 10;
         }
         else if (collision.gameObject.tag == "IceCookie")
         {
             score += 0;
             isFrozen = true;
+            animator.SetBool("isFrozen", isFrozen);
         }
         else if (collision.gameObject.tag == "PoisonDonut")
         {
-            animator.SetTrigger("Puke");
+            if (!isFrozen)
+                animator.SetTrigger("Puke");
             score += -5;
         }
 
@@ -78,5 +83,6 @@ public class CharacterScript : MonoBehaviour
     {
         yield return new WaitForSeconds(freezeTime);
         isFrozen = false;
+        animator.SetBool("isFrozen", isFrozen);
     }
 }
