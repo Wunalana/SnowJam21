@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/KP_main.unity
     guid: 04e0a8357ef89ed4892fa970c20ee263
+  - enabled: 1
+    path: Assets/Scenes/Simon_EndScreen.unity
+    guid: a00224d24be45344fac70ac3d852c559
   m_configObjects: {}

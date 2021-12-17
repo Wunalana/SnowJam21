@@ -15,7 +15,7 @@ public class CharacterScript : MonoBehaviour
 
     void Awake()
     {
-        score = 0;
+        score = 100;
     }
 
     void Start()

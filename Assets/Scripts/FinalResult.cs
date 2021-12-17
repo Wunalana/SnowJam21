@@ -21,8 +21,8 @@ public class FinalResult : MonoBehaviour
 
 
     const int maxPlayer = 5;
-    string[] playerNames = new string[] { "Gracie", "Amy", "Victor", "Mike", "Emily" };
-    float[] playerScores = new float[] { 60, 60, 60, 60, 60 };
+    static string[] playerNames = new string[] { "Gracie", "Amy", "Victor", "Mike", "Emily" };
+    static float[] playerScores = new float[] { 60, 60, 60, 60, 60 };
     float currentLowScoreOnB = 100;
     float Pscore1 = 100;
 
@@ -30,6 +30,10 @@ public class FinalResult : MonoBehaviour
     {
         Debug.Log("QUIT!!");
         Application.Quit();
+    }
+
+    public void goToMenu() {
+        Application.LoadLevel("Menu");
     }
 
     //public void GetName()
@@ -51,24 +55,33 @@ public class FinalResult : MonoBehaviour
             int i = 0;
             for (; i < maxPlayer; i++)
             {
-                if (playerScores[i] > Pscore)
+                if (playerScores[i] < Pscore)
                 {
                     break;
                 }
             }
+
             int k;
-            for (k = maxPlayer - 1; k > i+2; k--)
+            for (k = maxPlayer - 1; k > i; k--)
             {
                 playerNames[k] = playerNames[k-1];
                 playerScores[k] = playerScores[k-1];
             }
             //kp
-            //playerName = Canvas.GetComponent<PlayerName>().nameOfPlayer;
+            playerName = PlayerName.nameOfPlayer;
             playerNames[k] = "You";
+            if (playerName == null)
+            {
+                playerNames[k] = "You";
+            }
+            else
+            {
+                playerNames[k] = playerName;
+            }
             //'kp
             playerScores[k] = timeScore;
             currentLowScoreOnB = playerScores[4];
-            displayScore.text = "is no." + (k+1) + " on the scoreboard!!";
+            displayScore.text = "is No." + (k+1) + " on the scoreboard!!";
             for (int j = 0; j<maxPlayer; j++)
             {
                     displayScore.text += "\n No." + (j + 1) + "   " + playerNames[j] + "   " + playerScores[j];
