@@ -89,6 +89,14 @@ public class FinalResult : MonoBehaviour
         }
     }
 
+    public void DisplayOnlyBoard() {
+        displayScore.text = "";
+        for (int j = 0; j<maxPlayer; j++)
+            {
+                    displayScore.text += "\n No." + (j + 1) + "   " + playerNames[j] + "   " + playerScores[j];
+            }
+    }
+
     private void ShowScore()
     {
         if (Pscore<100)
