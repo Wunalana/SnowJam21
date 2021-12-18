@@ -9,7 +9,7 @@ public class PlayerName : MonoBehaviour
     public static string nameOfPlayer;
     public string saveName;
     public TMP_Text inputText;
-    public TMP_Text loadedName;
+    //public TMP_Text loadedName;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class PlayerName : MonoBehaviour
     void Update()
     {
         nameOfPlayer = PlayerPrefs.GetString("name", "none");
-        loadedName.text = nameOfPlayer;
+        //loadedName.text = nameOfPlayer;
     }
 
     public void SetName()

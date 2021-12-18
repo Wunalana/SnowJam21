@@ -81,7 +81,7 @@ public class FinalResult : MonoBehaviour
             //'kp
             playerScores[k] = timeScore;
             currentLowScoreOnB = playerScores[4];
-            displayScore.text = "is No." + (k+1) + " on the scoreboard!!";
+            displayScore.text = playerName + " is No." + (k+1) + " on the scoreboard!!";
             for (int j = 0; j<maxPlayer; j++)
             {
                     displayScore.text += "\n No." + (j + 1) + "   " + playerNames[j] + "   " + playerScores[j];
