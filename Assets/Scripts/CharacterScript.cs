@@ -12,6 +12,7 @@ public class CharacterScript : MonoBehaviour
     private int freezeTime = 3;
     //float currentTime = 0f; //VF
     //[SerializeField] Text scoreText; //VF
+    public Rigidbody rb;
 
     void Awake()
     {
@@ -23,22 +24,24 @@ public class CharacterScript : MonoBehaviour
         //score = 0;
         isFrozen = false;
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
+        rb = this.GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        if (isFrozen != true)
+        float horizontalMove = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
+        if (isFrozen != true && rb.transform.position.x + horizontalMove < 9 && rb.transform.position.x + horizontalMove > -9)
         {
-            float horizontalMove = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
             this.transform.Translate(horizontalMove, 0, 0);
 
             m_SpriteRenderer.flipX = (horizontalMove < 0);
             animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
         }
-        else
+        else if(isFrozen == true)
         {
             StartCoroutine("frozen");
         }
+
         Debug.Log(score);
         //scoreText.text = score.ToString("0"); // VicF
         //print(score); // VF
