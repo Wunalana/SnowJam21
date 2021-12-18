@@ -23,7 +23,7 @@ public class FinalResult : MonoBehaviour
     const int maxPlayer = 5;
     static string[] playerNames = new string[] { "Gracie", "Amy", "Victor", "Mike", "Emily" };
     static float[] playerScores = new float[] { 60, 60, 60, 60, 60 };
-    float currentLowScoreOnB = 100;
+    float currentLowScoreOnB = playerScores[4];
     float Pscore1 = 100;
 
     public void QuitGame()
@@ -45,8 +45,8 @@ public class FinalResult : MonoBehaviour
     public void DisplayBoard()
     {
         Debug.Log("Board!!");
-        //if (Pscore < 100 || Pscore > currentLowScoreOnB)//changes for debug process
-        if (Pscore == 999)
+        //if (Pscore == 999)
+        if (Pscore < 100 || timeScore > currentLowScoreOnB) //changes for debug process
         {
             displayScore.text = "\n\nYou are not in Top5! Bye!";
         }
@@ -55,7 +55,7 @@ public class FinalResult : MonoBehaviour
             int i = 0;
             for (; i < maxPlayer; i++)
             {
-                if (playerScores[i] < Pscore)
+                if (playerScores[i] > timeScore)
                 {
                     break;
                 }
